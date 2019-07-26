@@ -24,13 +24,34 @@
 	
 <img src="RB1.jpg">
 
+<p>All the dinosaurs feared the mighty T-Rex <a href="https://developer.mozilla.org/en-US/">MDN</a></p>
+
+<p>Apple Pies <a href="https://www.allrecipes.com/recipe/12682/apple-pie-by-grandma-ople/">Recipe</a></p>
+
 </section>
 
 
 
 <script type="text/javascript">
 	
+var link = document.querySelectorAll('a')[0];
 
+link.textContent = "Mozilla Developer NTWK";
+//link.href = "https://www.google.com/";
+
+var secLink = document.querySelectorAll('a')[1];
+
+secLink.textContent = "More Apple Pies";
+
+var sect = document.querySelector('section');
+var newPara = document.createElement('p');
+newPara.textContent =  "Go Freakin Birds";
+
+sect.appendChild(newPara);
+
+var newText = document.createTextNode(' Birds Birds Birds');
+var linkPara = document.querySelectorAll('p')[1];
+linkPara.appendChild(newText);
 
 </script>
 </body>
