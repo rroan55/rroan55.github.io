@@ -30,7 +30,7 @@
 
 </section>
 
-
+<button id="theButton" type="button">Push The Mighty Button</button>
 
 <script type="text/javascript">
 
@@ -53,6 +53,36 @@ sect.appendChild(newPara);
 var newText = document.createTextNode(' Birds Birds Birds');
 var linkPara = document.querySelectorAll('p')[1];
 linkPara.appendChild(newText);
+
+(function() {
+	var request;
+document.getElementById("theButton").addEventListener('click', makeRequest);
+
+function makeRequest() {
+request = new XMLHttpRequest();
+
+if (!request) {
+	alert('Cannot make XMLHTTP instance');
+	return false;
+}
+request.onreadystatechange = alertContents;
+request.open('GET', 'lorem.txt');
+request.send();
+}
+
+function alertContents() {
+	if (request.readyState === XMLHttpRequest.DONE) {
+		if(request.status === 200) {
+			alert(request.responseText);
+		} else {
+			alert('There was an issue with the request');
+		}
+	}
+}
+
+}) ();
+
+
 
 </script>
 </body>
