@@ -1,61 +1,153 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-	<title>RRoan's Page</title>
 
-<link rel="stylesheet" type="text/css" href="theme.css">
+  <head>
 
-</head>
-<body>
+    <meta charset="utf-8">
 
-	<h1>You're my boy blue</h1>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<div class = "first">
-	
-	<ul>
-		<li>Apples</li>
-		<li>Banans</li>
-		<li>Oranges</li>
-	</ul>
+    <meta name="viewport" content="width=device-width">
 
-</div>
+ 
 
-<section>
-	
-<img src="media/RB1.jpg">
+    <title>Ajax starting point</title>
 
-<p>All the dinosaurs feared the mighty T-Rex <a href="https://developer.mozilla.org/en-US/">MDN</a></p>
+ 
 
-<p>Apple Pies <a href="https://www.allrecipes.com/recipe/12682/apple-pie-by-grandma-ople/">Recipe</a></p>
+    <style>
 
-</section>
+      html, pre {
 
+        font-family: sans-serif;
 
+      }
 
-<script type="text/javascript">
+ 
 
+      body {
 
-var link = document.querySelectorAll('a')[0];
+        width: 500px;
 
-link.textContent = "Mozilla Developer NTWK";
-//link.href = "https://www.google.com/";
+        margin: 0 auto;
 
-var secLink = document.querySelectorAll('a')[1];
+        background-color: #ccc;
 
-secLink.textContent = "More Apple Pies";
+      }
 
-var sect = document.querySelector('section');
-var newPara = document.createElement('p');
-newPara.textContent =  "Go Freakin Birds";
+ 
 
-sect.appendChild(newPara);
+      pre {
 
-var newText = document.createTextNode(' Birds Birds Birds');
-var linkPara = document.querySelectorAll('p')[1];
-linkPara.appendChild(newText);
+        line-height: 1.5;
 
+        letter-spacing: 0.05rem;
 
-</script>
-</body>
+        padding: 1rem;
+
+        background-color: white;
+
+      }
+
+ 
+
+      label {
+
+        width: 200px;
+
+        margin-right: 33px;
+
+      }
+
+ 
+
+      select {
+
+        width: 350px;
+
+        padding: 5px;
+
+      }
+
+ 
+
+    </style>
+
+    <!--[if lt IE 9]>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+
+    <![endif]-->
+
+  </head>
+
+ 
+
+  <body>
+
+    <h1>Ajax starting point</h1>
+
+ 
+
+    <form>
+
+      <label for="lorem-choose">Choose a verse</label>
+
+      <select id="lorem-choose" name="lorem-choose">
+
+        <option>Lorem 1</option>
+
+        <option>Lorem 2</option>
+
+      </select>
+
+    </form>
+
+ 
+
+    <h2>The Conqueror Worm, <em>Edgar Allen Poe, 1843</em></h2>
+
+ 
+
+    <pre>
+
+ 
+
+    </pre>
+
+ 
+
+    <script>
+
+ var loremChoose = document.querySelector('select');
+var loremDisplay = document.querySelector('pre');
+
+loremChoose.onChange = function() {
+  var lorem = loremChoose.value;
+  updateDisplay(lorem);
+};
+
+function updateDisplay(lorem) {
+
+lorem = lorem.replace(" ", "");
+lorem = lorem.toLowerCase();
+
+var url = 'request1/' + lorem + '.txt';
+
+fetch(url).then(function(response) {
+  response.text().then(function(text) {
+    loremDisplay.textContent = text;
+  });
+});
+
+};
+
+updateDisplay('Lorem 1');
+loremChoose.value = 'Lorem 1';
+
+    </script>
+
+  </body>
 
 </html>
