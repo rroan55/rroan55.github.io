@@ -55,32 +55,6 @@ var linkPara = document.querySelectorAll('p')[1];
 linkPara.appendChild(newText);
 
 
-var loremChoose = document.querySelector('select');
-var loremDisplay = document.querySelector('pre');
-
-loremChoose.onChange = function() {
-	var lorem = loremChoose.value;
-	updateDisplay(lorem);
-};
-
-function updateDisplay(lorem) {
-
-lorem = lorem.replace(" ","");
-lorem = lorem.toLowerCase();
-
-var url = 'media/' + lorem + '.txt';
-
-fetch(url).then(function(response) {
-	response.text().then(function(text) {
-		loremDisplay.textContent = text;
-	});
-});
-
-};
-
-updateDisplay('Lorem 1');
-loremChoose.value = 'Lorem 1';
-
 </script>
 </body>
 
