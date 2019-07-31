@@ -8,7 +8,9 @@
 </head>
 <body>
 
-	<h1>You're my boy blue</h1>
+
+
+<h1>You're my boy blue</h1>
 
 <div class = "first">
 	
@@ -50,6 +52,8 @@
 
 </div>
 
+
+
 <canvas class="canvasRR">
 	
 <p>Your browser and canvas is a no go</p>
@@ -57,6 +61,7 @@
 </canvas>
 
 <script type="text/javascript">
+
 
 
 var link = document.querySelectorAll('a')[0];
@@ -129,9 +134,13 @@ fetch(url).then(function(response) {
 });
 };
 
+
+
+//drawing to a canvas
+
 var canvas = document.querySelector('.canvasRR');
-var width = canvas.width(320);
-var height = canvas.height(240);
+var width = canvas.width = 500;
+var height = canvas.height = 600;
 
 var ctx = canvas.getContext('2d');
 
@@ -140,6 +149,12 @@ ctx.fillRect(0,0, width, height);
 
 ctx.fillStyle = 'rgb(255,0, 0)';
 ctx.fillRect(50, 50, 100, 150);
+
+ctx.fillStyle = 'rgb(0, 255, 0)';
+ctx.fillRect(75, 75, 100, 100);
+
+ctx.fillStyle = 'rgba(255, 0, 255, 0.75)'
+ctx.fillRect(25, 100, 175, 50);
 
 </script>
 </body>
