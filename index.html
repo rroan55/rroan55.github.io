@@ -64,7 +64,7 @@ var displayText = document.querySelectorAll('section')[1];
 
 (function() {
 	var request;
-//document.getElementById("theButton").addEventListener('click', makeRequest);
+document.getElementById("theButton").addEventListener('click', makeRequest);
 
 function makeRequest() {
 request = new XMLHttpRequest();
@@ -77,8 +77,6 @@ request.onreadystatechange = writeContents;
 request.open('GET', 'media/lorem.txt');
 request.send();
 }
-
-document.getElementById("theButton").addEventListener('click', toggle
 
 function writeContents() {
 	var newDisplay = document.createTextNode(request.responseText);
@@ -93,7 +91,6 @@ function writeContents() {
 		}
 	}
 }
-})
 
 }) ();
 
