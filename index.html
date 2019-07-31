@@ -32,6 +32,8 @@
 
 <button id="theButton" type="button">Push The Mighty Button</button>
 
+<button id="secButton" type="button">No Push Me</button>
+
 <div class="grid">
 
 <section class = "textBox">
@@ -102,6 +104,20 @@ function writeContents() {
 
 }) ();
 
+
+var displaySecTxt = document.querySelectorAll('section')[2];
+var url = 'media/sept.txt'
+
+document.getElementById('secButton').addEventListener('click', secTxtEvent)
+
+function secTxtEvent(){
+
+fetch(url).then(function(response) {
+	response.text().then(function(text) {
+		displaySecTxt.textContent = text;
+	});
+});
+};
 
 
 </script>
