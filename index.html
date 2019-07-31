@@ -85,7 +85,8 @@ function writeContents() {
 	if (request.readyState === XMLHttpRequest.DONE) {
 		if(request.status === 200) {
 			request.onload = function() {
-				diplayText.appendChild(newDisplay);
+				//diplayText.appendChild(newDisplay);
+				document.write(request.responseText)
 			} 
 		} else {
 			alert('There was an issue with the request');
