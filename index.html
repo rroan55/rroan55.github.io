@@ -50,6 +50,12 @@
 
 </div>
 
+<canvas class="canvasRR">
+	
+<p>Your browser and canvas is a no go</p>
+
+</canvas>
+
 <script type="text/javascript">
 
 
@@ -123,6 +129,14 @@ fetch(url).then(function(response) {
 });
 };
 
+var canvas = document.querySelector('canvasRR');
+var width = canvas.width(320);
+var height = canvas.height(240);
+
+var ctx = canvas.getContext('2d');
+
+ctx.fillStyle = 'rgb(0,0,0)';
+ctx.fillRect(0,0, width, height);
 
 </script>
 </body>
