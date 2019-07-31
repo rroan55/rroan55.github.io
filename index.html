@@ -32,6 +32,11 @@
 
 <button id="theButton" type="button">Push The Mighty Button</button>
 
+<section class = "texBox">
+	
+
+</section>
+
 <script type="text/javascript">
 
 
@@ -56,6 +61,8 @@ linkPara.appendChild(newText);
 
 
 //make AJAX/XMLHTTP Request
+var displayText = document.querySelectorAll('section')[1];
+
 (function() {
 	var request;
 document.getElementById("theButton").addEventListener('click', makeRequest);
@@ -67,15 +74,17 @@ if (!request) {
 	alert('Cannot make XMLHTTP instance');
 	return false;
 }
-request.onreadystatechange = alertContents;
+request.onreadystatechange = writeContents;
 request.open('GET', 'media/lorem.txt');
 request.send();
 }
 
-function alertContents() {
+function writeContents() {
 	if (request.readyState === XMLHttpRequest.DONE) {
 		if(request.status === 200) {
-			alert(request.responseText);
+			request.onload = function() {
+				textDisplay.textContent = request.response;
+			} 
 		} else {
 			alert('There was an issue with the request');
 		}
