@@ -63,7 +63,7 @@ linkPara.appendChild(newText);
 //make AJAX/XMLHTTP Request
 var request;
 var displayText = document.querySelectorAll('section')[1];
-var newDisplay = document.createTextNode(request);
+var newDisplay = document.createTextNode(request.responseText);
 
 (function() {
 	var request;
@@ -85,8 +85,8 @@ function writeContents() {
 	if (request.readyState === XMLHttpRequest.DONE) {
 		if(request.status === 200) {
 			request.onload = function() {
-				//diplayText.appendChild(newDisplay);
-				document.write(request.responseText)
+				displayText.appendChild(newDisplay);
+				//document.write(request.responseText)
 			} 
 		} else {
 			alert('There was an issue with the request');
