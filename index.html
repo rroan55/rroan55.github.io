@@ -60,6 +60,14 @@
 
 </canvas>
 
+<p>blue green red</p>
+
+<canvas class="ndCanvas">
+	
+	<p>This is a no go from the browser</p>
+
+</canvas>
+
 <script type="text/javascript">
 
 
@@ -155,6 +163,18 @@ ctx.fillRect(75, 75, 100, 100);
 
 ctx.fillStyle = 'rgba(255, 0, 255, 0.75)'
 ctx.fillRect(25, 100, 175, 50);
+
+ctx.strokeStyle = 'rgb(255, 255, 255)';
+ctx.lineWidth = 5;
+ctx.strokeRect(25, 25, 175, 200);
+
+var canvasND = document.querySelector('.ndCanvas');
+canvasND.width = width;
+canvasND.height = height;
+
+var ctx2 = canvasND.getContext('2d');
+ctx2.fillStyle = 'rgb(0, 0, 0)';
+ctx2.fillRect(0, 0, width, height);
 
 </script>
 </body>
