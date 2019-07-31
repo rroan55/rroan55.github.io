@@ -17,11 +17,12 @@ height: 200px;
 	background-color: lightblue;
 }
 
-.textbox{
+.textBox{
 
-	height: 350px;
+	margin:25px;
+	height: 250px;
 	width: 450px;
+	background-color: lightgrey;
+	border: 1px, solid, grey;
 	align-self: center;
-	background-color: grey;
-	border: 1px, solid, lightgrey;
 }
