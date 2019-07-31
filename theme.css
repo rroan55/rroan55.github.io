@@ -16,3 +16,12 @@ height: 200px;
 #theButton {
 	background-color: lightblue;
 }
+
+.textbox{
+
+	height: 350px;
+	width: 450px;
+	align-self: center;
+	background-color: grey;
+	border: 1px, solid, lightgrey;
+}
