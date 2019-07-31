@@ -21,6 +21,15 @@ height: 200px;
 
 #theButton {
 	background-color: lightblue;
+	width: 100px;
+	margin: 25px;
+}
+
+#secButton {
+	background-color: lightgreen;
+	width: 100px;
+	margin: 25px;
+
 }
 
 .textBox{
@@ -30,5 +39,5 @@ height: 200px;
 	width: 450px;
 	background-color: lightgrey;
 	border: 1px, solid, grey;
-	align-self: center;
+
 }
