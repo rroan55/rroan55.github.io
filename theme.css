@@ -13,6 +13,12 @@ width: 200px;
 height: 200px;
 }
 
+.grid{
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
 #theButton {
 	background-color: lightblue;
 }
