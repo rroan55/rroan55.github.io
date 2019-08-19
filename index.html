@@ -68,9 +68,11 @@
 
 </canvas>
 
+
+
 <script type="text/javascript">
 
-
+/*
 
 var link = document.querySelectorAll('a')[0];
 
@@ -146,6 +148,7 @@ fetch(url).then(function(response) {
 
 //drawing to a canvas
 
+
 var canvas = document.querySelector('.canvasRR');
 var width = canvas.width = 500;
 var height = canvas.height = 600;
@@ -175,6 +178,28 @@ canvasND.height = height;
 var ctx2 = canvasND.getContext('2d');
 ctx2.fillStyle = 'rgb(0, 0, 0)';
 ctx2.fillRect(0, 0, width, height);
+*/
+
+
+
+var input = '*	ahalsema	|	GS Finance I2C VC Canada V |' +
+'*	akmoore	|'+	
+'*	Angelo.Castro	|'	+
+'*	apac_kotaro.saito	|'	+
+'*	Arif.Syed	|	'+
+'*	ashah110	|	MN Accounts Receivable Brea Voice|MN User List Brea Directory |'+
+'*	ATest	|'
+
+document.write(input);
+
+splitInput = input.split('|');
+ document.write(splitInput);
+ document.write(splitInput.length);
+
+for(var i = 0, i < splitInput.length,i++){
+	document.write("apples" + '<br>');
+}
+
 
 </script>
 </body>
